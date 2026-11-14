@@ -10,7 +10,7 @@ p=argparse.ArgumentParser()
 p.add_argument('--out',type=Path,default=root.parent/'Intelligent_Data_Recording_Agent_v0.9.3-rc2.zip')
 a=p.parse_args()
 allow_roots={'src','tests','docs','scripts','examples','reports','packaging'}
-allow_files={'README.md','LICENSE','THIRD_PARTY_NOTICES.md','CHANGELOG.md','pyproject.toml','requirements.txt','requirements-dev.txt','requirements-core.txt','config.example.json','.gitignore','Build IDRA (macOS).command','Build IDRA (Windows).bat','build-idra-linux.sh','DOCUMENTATION.md'}
+allow_files={'README.md','SECURITY.md','LICENSE','THIRD_PARTY_NOTICES.md','CHANGELOG.md','pyproject.toml','requirements.txt','requirements-dev.txt','requirements-core.txt','config.example.json','.gitignore','Build IDRA (macOS).command','Build IDRA (Windows).bat','build-idra-linux.sh','DOCUMENTATION.md'}
 exclude={'bin','build','dist','__pycache__','.pytest_cache','.mypy_cache','.ruff_cache','.venv','venv','htmlcov'}
 files=[]
 for f in sorted(root.rglob('*')):

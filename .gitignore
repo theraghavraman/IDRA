@@ -15,3 +15,24 @@ demo-recordings/
 demo-dataset/
 *.log
 packaging/macos/bin/
+
+# Never commit personal data or credentials
+.env
+.env.*
+settings.json
+*.pem
+*.key
+*.p12
+*.pfx
+*.cer
+*.mobileprovision
+*.keychain*
+.DS_Store
+
+# Generated release artifacts (package_release.py writes the inventory into the ZIP)
+RELEASE_CONTENTS.json
+*.zip
+*.sha256
+reports/native-acceptance/
+reports/provisional-python-sbom.cdx.json
+reports/sbom-limitations.json
