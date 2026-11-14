@@ -1,0 +1,468 @@
+{
+  "$defs": {
+    "BrowserConfig": {
+      "additionalProperties": false,
+      "properties": {
+        "enabled": {
+          "default": false,
+          "title": "Enabled",
+          "type": "boolean"
+        },
+        "start_url": {
+          "default": "about:blank",
+          "maxLength": 2048,
+          "title": "Start Url",
+          "type": "string"
+        },
+        "executable": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Executable"
+        }
+      },
+      "title": "BrowserConfig",
+      "type": "object"
+    },
+    "CaptureConfig": {
+      "additionalProperties": false,
+      "properties": {
+        "backend": {
+          "default": "mss",
+          "enum": [
+            "mss",
+            "ffmpeg_x11"
+          ],
+          "title": "Backend",
+          "type": "string"
+        },
+        "monitor": {
+          "default": 1,
+          "maximum": 64,
+          "minimum": 1,
+          "title": "Monitor",
+          "type": "integer"
+        },
+        "fps": {
+          "default": 5,
+          "maximum": 60,
+          "minimum": 1,
+          "title": "Fps",
+          "type": "integer"
+        },
+        "output_width": {
+          "default": 1280,
+          "maximum": 7680,
+          "minimum": 64,
+          "title": "Output Width",
+          "type": "integer"
+        },
+        "screenshot_interval_s": {
+          "default": 2.0,
+          "maximum": 3600,
+          "minimum": 0.1,
+          "title": "Screenshot Interval S",
+          "type": "number"
+        },
+        "queue_frames": {
+          "default": 8,
+          "maximum": 64,
+          "minimum": 1,
+          "title": "Queue Frames",
+          "type": "integer"
+        },
+        "x11_display": {
+          "anyOf": [
+            {
+              "maxLength": 100,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "X11 Display"
+        },
+        "region_left": {
+          "default": 0,
+          "title": "Region Left",
+          "type": "integer"
+        },
+        "region_top": {
+          "default": 0,
+          "title": "Region Top",
+          "type": "integer"
+        },
+        "region_width": {
+          "default": 1280,
+          "maximum": 16384,
+          "minimum": 64,
+          "title": "Region Width",
+          "type": "integer"
+        },
+        "region_height": {
+          "default": 720,
+          "maximum": 16384,
+          "minimum": 64,
+          "title": "Region Height",
+          "type": "integer"
+        },
+        "capture_mouse": {
+          "default": true,
+          "title": "Capture Mouse",
+          "type": "boolean"
+        },
+        "capture_keyboard": {
+          "default": false,
+          "title": "Capture Keyboard",
+          "type": "boolean"
+        },
+        "capture_window_context": {
+          "default": false,
+          "title": "Capture Window Context",
+          "type": "boolean"
+        },
+        "mouse_move_interval_ms": {
+          "default": 50,
+          "maximum": 5000,
+          "minimum": 5,
+          "title": "Mouse Move Interval Ms",
+          "type": "integer"
+        }
+      },
+      "title": "CaptureConfig",
+      "type": "object"
+    },
+    "Consent": {
+      "additionalProperties": false,
+      "properties": {
+        "granted_at": {
+          "format": "date-time",
+          "title": "Granted At",
+          "type": "string"
+        },
+        "authorized_to_record": {
+          "const": true,
+          "title": "Authorized To Record",
+          "type": "boolean"
+        },
+        "understands_visual_risk": {
+          "const": true,
+          "title": "Understands Visual Risk",
+          "type": "boolean"
+        },
+        "telemetry_content": {
+          "const": "no_raw_text",
+          "default": "no_raw_text",
+          "title": "Telemetry Content",
+          "type": "string"
+        }
+      },
+      "required": [
+        "granted_at",
+        "authorized_to_record",
+        "understands_visual_risk"
+      ],
+      "title": "Consent",
+      "type": "object"
+    },
+    "Mask": {
+      "additionalProperties": false,
+      "properties": {
+        "x": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "X",
+          "type": "number"
+        },
+        "y": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Y",
+          "type": "number"
+        },
+        "width": {
+          "exclusiveMinimum": 0,
+          "maximum": 1,
+          "title": "Width",
+          "type": "number"
+        },
+        "height": {
+          "exclusiveMinimum": 0,
+          "maximum": 1,
+          "title": "Height",
+          "type": "number"
+        }
+      },
+      "required": [
+        "x",
+        "y",
+        "width",
+        "height"
+      ],
+      "title": "Mask",
+      "type": "object"
+    },
+    "PrivacyConfig": {
+      "additionalProperties": false,
+      "properties": {
+        "masks": {
+          "items": {
+            "$ref": "#/$defs/Mask"
+          },
+          "maxItems": 64,
+          "title": "Masks",
+          "type": "array"
+        },
+        "browser_labels": {
+          "default": false,
+          "title": "Browser Labels",
+          "type": "boolean"
+        },
+        "browser_titles": {
+          "default": false,
+          "title": "Browser Titles",
+          "type": "boolean"
+        },
+        "url_detail": {
+          "default": "origin",
+          "enum": [
+            "origin",
+            "path"
+          ],
+          "title": "Url Detail",
+          "type": "string"
+        }
+      },
+      "title": "PrivacyConfig",
+      "type": "object"
+    },
+    "Settings": {
+      "additionalProperties": false,
+      "properties": {
+        "storage_root": {
+          "default": "~/IDRA-recordings",
+          "title": "Storage Root",
+          "type": "string"
+        },
+        "ffmpeg": {
+          "default": "ffmpeg",
+          "title": "Ffmpeg",
+          "type": "string"
+        },
+        "ffprobe": {
+          "default": "ffprobe",
+          "title": "Ffprobe",
+          "type": "string"
+        },
+        "capture": {
+          "$ref": "#/$defs/CaptureConfig"
+        },
+        "browser": {
+          "$ref": "#/$defs/BrowserConfig"
+        },
+        "privacy": {
+          "$ref": "#/$defs/PrivacyConfig"
+        },
+        "min_free_mb": {
+          "default": 1024,
+          "maximum": 1048576,
+          "minimum": 1,
+          "title": "Min Free Mb",
+          "type": "integer"
+        },
+        "event_queue_size": {
+          "default": 8192,
+          "maximum": 131072,
+          "minimum": 32,
+          "title": "Event Queue Size",
+          "type": "integer"
+        },
+        "batch_size": {
+          "default": 128,
+          "maximum": 8192,
+          "minimum": 1,
+          "title": "Batch Size",
+          "type": "integer"
+        },
+        "flush_interval_s": {
+          "default": 0.5,
+          "maximum": 5,
+          "minimum": 0.05,
+          "title": "Flush Interval S",
+          "type": "number"
+        },
+        "retention_days": {
+          "default": 0,
+          "maximum": 36500,
+          "minimum": 0,
+          "title": "Retention Days",
+          "type": "integer"
+        }
+      },
+      "title": "Settings",
+      "type": "object"
+    },
+    "State": {
+      "enum": [
+        "IDLE",
+        "STARTING",
+        "RECORDING",
+        "PAUSED",
+        "STOPPING",
+        "COMPLETED",
+        "FAILED",
+        "INTERRUPTED"
+      ],
+      "title": "State",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0",
+      "default": "1.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "application_version": {
+      "default": "0.9.3",
+      "title": "Application Version",
+      "type": "string"
+    },
+    "session_id": {
+      "format": "uuid",
+      "title": "Session Id",
+      "type": "string"
+    },
+    "label": {
+      "maxLength": 256,
+      "title": "Label",
+      "type": "string"
+    },
+    "task_description": {
+      "default": "",
+      "maxLength": 4000,
+      "title": "Task Description",
+      "type": "string"
+    },
+    "created_at": {
+      "format": "date-time",
+      "title": "Created At",
+      "type": "string"
+    },
+    "state": {
+      "$ref": "#/$defs/State",
+      "default": "STARTING"
+    },
+    "duration_ns": {
+      "default": 0,
+      "minimum": 0,
+      "title": "Duration Ns",
+      "type": "integer"
+    },
+    "synthetic": {
+      "default": false,
+      "title": "Synthetic",
+      "type": "boolean"
+    },
+    "settings": {
+      "$ref": "#/$defs/Settings"
+    },
+    "consent": {
+      "$ref": "#/$defs/Consent"
+    },
+    "platform": {
+      "title": "Platform",
+      "type": "string"
+    },
+    "geometry": {
+      "additionalProperties": {
+        "anyOf": [
+          {
+            "type": "integer"
+          },
+          {
+            "type": "number"
+          },
+          {
+            "type": "string"
+          }
+        ]
+      },
+      "title": "Geometry",
+      "type": "object"
+    },
+    "counts": {
+      "additionalProperties": {
+        "type": "integer"
+      },
+      "title": "Counts",
+      "type": "object"
+    },
+    "warnings": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Warnings",
+      "type": "array"
+    },
+    "failure_codes": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Failure Codes",
+      "type": "array"
+    },
+    "media": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Media"
+    },
+    "checksums": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "title": "Checksums",
+      "type": "object"
+    },
+    "operations": {
+      "items": {
+        "additionalProperties": true,
+        "type": "object"
+      },
+      "title": "Operations",
+      "type": "array"
+    },
+    "timebase": {
+      "default": "monotonic elapsed ns including pauses; video PTS mapped by frames.jsonl",
+      "title": "Timebase",
+      "type": "string"
+    }
+  },
+  "required": [
+    "session_id",
+    "label",
+    "created_at",
+    "settings",
+    "consent",
+    "platform"
+  ],
+  "title": "Manifest",
+  "type": "object"
+}

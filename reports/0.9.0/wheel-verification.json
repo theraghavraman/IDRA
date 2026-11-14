@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "counts": {
+    "events": 3,
+    "frames": 3,
+    "trajectories": 1,
+    "assets": 2
+  },
+  "checks": [
+    "checksums",
+    "schemas",
+    "action/frame references",
+    "split references",
+    "media integrity"
+  ]
+}

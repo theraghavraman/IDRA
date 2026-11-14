@@ -1,0 +1,12 @@
+{
+  "synthetic": true,
+  "valid_dataset": false,
+  "expected_issue_codes": [
+    "DUPLICATE_EVENT",
+    "EVENT_SCHEMA",
+    "INVALID_COORDINATES",
+    "MISSING_SCREENSHOT"
+  ],
+  "reproduce": "python scripts/make_examples.py in a clean source copy",
+  "notes": "The builder also removes a screenshot from a temporary copied session before validating; raw broken journal is included for inspection."
+}

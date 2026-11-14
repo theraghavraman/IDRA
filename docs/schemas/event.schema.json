@@ -1,0 +1,599 @@
+{
+  "$defs": {
+    "Payload": {
+      "additionalProperties": false,
+      "properties": {
+        "x": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "X"
+        },
+        "y": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Y"
+        },
+        "x_px": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "X Px"
+        },
+        "y_px": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Y Px"
+        },
+        "in_capture": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "In Capture"
+        },
+        "coordinate_space": {
+          "default": "none",
+          "enum": [
+            "desktop",
+            "viewport",
+            "none"
+          ],
+          "title": "Coordinate Space",
+          "type": "string"
+        },
+        "button": {
+          "anyOf": [
+            {
+              "enum": [
+                "left",
+                "right",
+                "middle",
+                "other"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Button"
+        },
+        "dx": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Dx"
+        },
+        "dy": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Dy"
+        },
+        "key_category": {
+          "anyOf": [
+            {
+              "enum": [
+                "protected",
+                "modifier",
+                "navigation",
+                "editing",
+                "function"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Key Category"
+        },
+        "key_name": {
+          "anyOf": [
+            {
+              "enum": [
+                "shift",
+                "ctrl",
+                "alt",
+                "cmd",
+                "enter",
+                "tab",
+                "esc",
+                "space",
+                "backspace",
+                "delete",
+                "up",
+                "down",
+                "left",
+                "right",
+                "home",
+                "end",
+                "page_up",
+                "page_down",
+                "caps_lock",
+                "f1",
+                "f2",
+                "f3",
+                "f4",
+                "f5",
+                "f6",
+                "f7",
+                "f8",
+                "f9",
+                "f10",
+                "f11",
+                "f12"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Key Name"
+        },
+        "modifiers": {
+          "items": {
+            "enum": [
+              "shift",
+              "ctrl",
+              "alt",
+              "cmd"
+            ],
+            "type": "string"
+          },
+          "maxItems": 4,
+          "title": "Modifiers",
+          "type": "array"
+        },
+        "redacted": {
+          "default": true,
+          "title": "Redacted",
+          "type": "boolean"
+        },
+        "action": {
+          "anyOf": [
+            {
+              "enum": [
+                "click",
+                "input",
+                "change",
+                "focus",
+                "scroll",
+                "start",
+                "complete",
+                "failed"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Action"
+        },
+        "url": {
+          "anyOf": [
+            {
+              "maxLength": 2048,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Url"
+        },
+        "title": {
+          "anyOf": [
+            {
+              "maxLength": 256,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Title"
+        },
+        "tag": {
+          "anyOf": [
+            {
+              "maxLength": 32,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Tag"
+        },
+        "role": {
+          "anyOf": [
+            {
+              "maxLength": 64,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Role"
+        },
+        "label": {
+          "anyOf": [
+            {
+              "maxLength": 256,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Label"
+        },
+        "input_type": {
+          "anyOf": [
+            {
+              "maxLength": 32,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Input Type"
+        },
+        "sensitive": {
+          "default": false,
+          "title": "Sensitive",
+          "type": "boolean"
+        },
+        "viewport_width": {
+          "anyOf": [
+            {
+              "maximum": 100000,
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Viewport Width"
+        },
+        "viewport_height": {
+          "anyOf": [
+            {
+              "maximum": 100000,
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Viewport Height"
+        },
+        "browser_timestamp_ms": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Browser Timestamp Ms"
+        },
+        "browser_time_origin_ms": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Browser Time Origin Ms"
+        },
+        "is_trusted": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Is Trusted"
+        },
+        "outcome": {
+          "anyOf": [
+            {
+              "enum": [
+                "observed_event_only",
+                "navigation_completed",
+                "navigation_failed"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Outcome"
+        },
+        "text": {
+          "anyOf": [
+            {
+              "maxLength": 4000,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Text"
+        },
+        "boundary": {
+          "anyOf": [
+            {
+              "enum": [
+                "start",
+                "end"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Boundary"
+        },
+        "app": {
+          "anyOf": [
+            {
+              "maxLength": 256,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "App"
+        },
+        "pid": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Pid"
+        },
+        "state": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/State"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "reason": {
+          "anyOf": [
+            {
+              "maxLength": 120,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Reason"
+        }
+      },
+      "title": "Payload",
+      "type": "object"
+    },
+    "State": {
+      "enum": [
+        "IDLE",
+        "STARTING",
+        "RECORDING",
+        "PAUSED",
+        "STOPPING",
+        "COMPLETED",
+        "FAILED",
+        "INTERRUPTED"
+      ],
+      "title": "State",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0",
+      "default": "1.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "event_id": {
+      "format": "uuid",
+      "title": "Event Id",
+      "type": "string"
+    },
+    "session_id": {
+      "format": "uuid",
+      "title": "Session Id",
+      "type": "string"
+    },
+    "sequence": {
+      "minimum": 0,
+      "title": "Sequence",
+      "type": "integer"
+    },
+    "t_ns": {
+      "minimum": 0,
+      "title": "T Ns",
+      "type": "integer"
+    },
+    "received_t_ns": {
+      "minimum": 0,
+      "title": "Received T Ns",
+      "type": "integer"
+    },
+    "utc": {
+      "format": "date-time",
+      "title": "Utc",
+      "type": "string"
+    },
+    "type": {
+      "enum": [
+        "mouse_move",
+        "mouse_button_down",
+        "mouse_button_up",
+        "scroll",
+        "key_press",
+        "key_release",
+        "window_context",
+        "browser_navigation",
+        "browser_action",
+        "annotation",
+        "task_boundary",
+        "state_change",
+        "capture_gap"
+      ],
+      "title": "Type",
+      "type": "string"
+    },
+    "source": {
+      "enum": [
+        "pynput",
+        "browser",
+        "controller",
+        "window_context",
+        "synthetic"
+      ],
+      "title": "Source",
+      "type": "string"
+    },
+    "timestamp_kind": {
+      "default": "callback",
+      "enum": [
+        "callback",
+        "calibrated",
+        "received",
+        "synthetic"
+      ],
+      "title": "Timestamp Kind",
+      "type": "string"
+    },
+    "uncertainty_ns": {
+      "anyOf": [
+        {
+          "minimum": 0,
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Uncertainty Ns"
+    },
+    "synthetic": {
+      "default": false,
+      "title": "Synthetic",
+      "type": "boolean"
+    },
+    "payload": {
+      "$ref": "#/$defs/Payload"
+    }
+  },
+  "required": [
+    "session_id",
+    "sequence",
+    "t_ns",
+    "received_t_ns",
+    "utc",
+    "type",
+    "source"
+  ],
+  "title": "Event",
+  "type": "object"
+}

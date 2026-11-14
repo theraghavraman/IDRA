@@ -1,0 +1,123 @@
+{
+  "schema_version": "1.0",
+  "session_id": "863228e6-ea35-49ef-8e6a-d1f5c6d73fc7",
+  "generated_at": "2026-10-16T10:15:24.166268+00:00",
+  "status": "failed",
+  "errors": 9,
+  "warnings": 3,
+  "metrics": {
+    "dropped_frames": 0,
+    "missed_capture_deadlines": 0,
+    "browser_rejected": 0,
+    "browser_rate_limited": 0,
+    "indexed_events": 9,
+    "indexed_frames": 7,
+    "event_records": 11,
+    "frame_records": 7,
+    "browser_clicks": 0,
+    "temporally_correlated_browser_clicks": 0,
+    "media_bytes": 5138
+  },
+  "issue_counts": {
+    "EVENT_INDEX_MISMATCH": 1,
+    "INVALID_COORDINATES": 1,
+    "DUPLICATE_EVENT": 1,
+    "SEQUENCE_ORDER": 1,
+    "OCCURRENCE_ORDER": 1,
+    "DELIVERY_ORDER": 1,
+    "EVENT_SCHEMA": 1,
+    "MISSING_SCREENSHOT": 1,
+    "INDEX_COUNT_MISMATCH": 1,
+    "MANIFEST_COUNT_MISMATCH": 1,
+    "FULL_DECODE_NOT_RUN": 1,
+    "FILE_CHECKSUM": 1
+  },
+  "issues": [
+    {
+      "severity": "error",
+      "code": "EVENT_INDEX_MISMATCH",
+      "message": "Rebuild the event index from its canonical journal",
+      "line": 2
+    },
+    {
+      "severity": "error",
+      "code": "INVALID_COORDINATES",
+      "message": "In-capture coordinates lie outside the captured image",
+      "line": 2
+    },
+    {
+      "severity": "error",
+      "code": "DUPLICATE_EVENT",
+      "message": "Repeated event ID or sequence number",
+      "line": 10
+    },
+    {
+      "severity": "error",
+      "code": "SEQUENCE_ORDER",
+      "message": "Event sequence numbers must increase in the journal",
+      "line": 10
+    },
+    {
+      "severity": "warning",
+      "code": "OCCURRENCE_ORDER",
+      "message": "Occurrence order differs from ingestion order; export sorts by occurrence time",
+      "line": 10
+    },
+    {
+      "severity": "warning",
+      "code": "DELIVERY_ORDER",
+      "message": "Callbacks were delivered out of order",
+      "line": 10
+    },
+    {
+      "severity": "error",
+      "code": "EVENT_SCHEMA",
+      "message": "Event violates the versioned schema",
+      "line": 11
+    },
+    {
+      "severity": "error",
+      "code": "MISSING_SCREENSHOT",
+      "message": "Referenced screenshot is missing",
+      "line": 1
+    },
+    {
+      "severity": "error",
+      "code": "INDEX_COUNT_MISMATCH",
+      "message": "Index count disagrees with canonical journal",
+      "line": null
+    },
+    {
+      "severity": "error",
+      "code": "MANIFEST_COUNT_MISMATCH",
+      "message": "Manifest events count disagrees with its journal",
+      "line": null
+    },
+    {
+      "severity": "warning",
+      "code": "FULL_DECODE_NOT_RUN",
+      "message": "Metadata inspection is not a full video corruption scan",
+      "line": null
+    },
+    {
+      "severity": "error",
+      "code": "FILE_CHECKSUM",
+      "message": "A registered artifact is missing or has changed",
+      "line": null
+    }
+  ],
+  "issues_truncated": false,
+  "limitations": [
+    "Passing checks does not establish training suitability or consent for downstream use.",
+    "Visual secrets and free-text secrets cannot be comprehensively detected.",
+    "Browser/input correlation is temporal evidence, not ground truth.",
+    "Blur is a Laplacian-variance heuristic; a static or blank screen may be intentional."
+  ],
+  "thresholds": {
+    "max_gap_s": 3,
+    "max_dropped_events": 0,
+    "min_frames": 1,
+    "blur_warning_score": 10,
+    "strict_received_timing": false
+  }
+}

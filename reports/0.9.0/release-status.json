@@ -1,0 +1,16 @@
+{
+  "version": "0.9.0",
+  "classification": "tested-source-release",
+  "production_acceptance": false,
+  "test_summary": {
+    "passed": 127,
+    "skipped": 9,
+    "total": 136,
+    "collected": 136
+  },
+  "statement_coverage_percent": 56.88002073075926,
+  "ruff": "NOT_RUN",
+  "mypy": "NOT_RUN",
+  "fresh_dependency_install": "NOT_VERIFIED",
+  "exact_archive_verification": "See external IDRA_Clean_Extraction_Report.json"
+}

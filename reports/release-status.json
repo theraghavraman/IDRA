@@ -1,0 +1,18 @@
+{
+  "version": "0.9.3-rc2",
+  "classification": "source-only-hardening-candidate",
+  "production_acceptance": false,
+  "native_windows_package": "NOT_BUILT_OR_TESTED",
+  "native_macos_arm64_package": "NOT_BUILT_OR_TESTED",
+  "native_macos_x86_64_package": "NOT_BUILT_OR_TESTED",
+  "native_linux_package": "NOT_REBUILT_AS_PYINSTALLER_BINARY",
+  "linux_x11_source_recording": "RC2 virtual X11 source capture: 32 frames; 0 full-decode errors; 4 warnings including missing global stop capability",
+  "signing_and_licenses": "PENDING",
+  "full_binary_sbom": "PENDING",
+  "source_test_results": "160 passed, 13 skipped, 0 failed on clean ZIP extraction; separate static and smoke tests passed",
+  "source_verifier": "Single all-in-one attempt timed out; archive CRC/hash, clean pytest, compilation, static audit, demo/export/reimport run separately",
+  "next_step": "Follow docs/PRODUCTION_RELEASE_RUNBOOK.md; production still NO_GO",
+  "local_linux_tests": "160 passed, 13 skipped, 0 failed in 31.09s",
+  "recovery_replay": "Previously failing forced-kill capture: 9 original frames, 7 journal frames, 7 reconciled frames; 0 full-decode errors, 6 warnings; remains INTERRUPTED",
+  "release_gate": "NO_GO by default; native signing/license approvals pending"
+}

@@ -1,0 +1,109 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0",
+      "default": "1.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "session_id": {
+      "format": "uuid",
+      "title": "Session Id",
+      "type": "string"
+    },
+    "index": {
+      "minimum": 0,
+      "title": "Index",
+      "type": "integer"
+    },
+    "t_ns": {
+      "minimum": 0,
+      "title": "T Ns",
+      "type": "integer"
+    },
+    "capture_started_t_ns": {
+      "minimum": 0,
+      "title": "Capture Started T Ns",
+      "type": "integer"
+    },
+    "pts_ns": {
+      "minimum": 0,
+      "title": "Pts Ns",
+      "type": "integer"
+    },
+    "width": {
+      "exclusiveMinimum": 0,
+      "title": "Width",
+      "type": "integer"
+    },
+    "height": {
+      "exclusiveMinimum": 0,
+      "title": "Height",
+      "type": "integer"
+    },
+    "timestamp_kind": {
+      "enum": [
+        "acquisition_complete",
+        "received",
+        "synthetic"
+      ],
+      "title": "Timestamp Kind",
+      "type": "string"
+    },
+    "screenshot": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Screenshot"
+    },
+    "sha256": {
+      "anyOf": [
+        {
+          "pattern": "^[a-f0-9]{64}$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Sha256"
+    },
+    "blur_score": {
+      "default": 0,
+      "minimum": 0,
+      "title": "Blur Score",
+      "type": "number"
+    },
+    "content_sha256": {
+      "pattern": "^[a-f0-9]{64}$",
+      "title": "Content Sha256",
+      "type": "string"
+    },
+    "synthetic": {
+      "default": false,
+      "title": "Synthetic",
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "session_id",
+    "index",
+    "t_ns",
+    "capture_started_t_ns",
+    "pts_ns",
+    "width",
+    "height",
+    "timestamp_kind",
+    "content_sha256"
+  ],
+  "title": "Frame",
+  "type": "object"
+}

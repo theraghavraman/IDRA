@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "python_modules_parsed": 51,
+  "issues": [],
+  "checks": [
+    "AST parse",
+    "Python compile",
+    "direct eval/exec/os.system/os.popen calls",
+    "literal shell=True calls"
+  ],
+  "ruff": "NOT_RUN",
+  "mypy": "NOT_RUN",
+  "limitations": [
+    "This audit does not check import resolution, complete typing, style, dependency CVEs, or all data flows."
+  ]
+}

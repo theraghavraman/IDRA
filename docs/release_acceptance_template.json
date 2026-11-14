@@ -1,0 +1,76 @@
+{
+  "version": "0.9.3-rc2",
+  "platforms": {
+    "windows-x64": {
+      "artifact_path": "",
+      "artifact_sha256": "",
+      "tested_os_version": "",
+      "tester": "",
+      "test_log": "",
+      "signature_report": "",
+      "native_tests_passed": false,
+      "real_gui_passed": false,
+      "global_stop_passed": false,
+      "installer_rollback_passed": false,
+      "signature_verified": false,
+      "long_run_passed": false,
+      "browser_provenance_reviewed": false
+    },
+    "macos-arm64": {
+      "artifact_path": "",
+      "artifact_sha256": "",
+      "tested_os_version": "",
+      "tester": "",
+      "test_log": "",
+      "signature_report": "",
+      "native_tests_passed": false,
+      "real_gui_passed": false,
+      "global_stop_passed": false,
+      "installer_rollback_passed": false,
+      "signature_verified": false,
+      "long_run_passed": false,
+      "browser_provenance_reviewed": false
+    },
+    "macos-x86_64": {
+      "artifact_path": "",
+      "artifact_sha256": "",
+      "tested_os_version": "",
+      "tester": "",
+      "test_log": "",
+      "signature_report": "",
+      "native_tests_passed": false,
+      "real_gui_passed": false,
+      "global_stop_passed": false,
+      "installer_rollback_passed": false,
+      "signature_verified": false,
+      "long_run_passed": false,
+      "browser_provenance_reviewed": false
+    },
+    "linux-x86_64": {
+      "artifact_path": "",
+      "artifact_sha256": "",
+      "tested_os_version": "",
+      "tester": "",
+      "test_log": "",
+      "signature_report": "",
+      "native_tests_passed": false,
+      "real_gui_passed": false,
+      "global_stop_passed": false,
+      "installer_rollback_passed": false,
+      "signature_verified": false,
+      "long_run_passed": false,
+      "browser_provenance_reviewed": false
+    }
+  },
+  "legal": {
+    "commercial_pyqt_approved": false,
+    "qt_obligations_approved": false,
+    "ffmpeg_libx264_approved": false,
+    "chromium_redistribution_approved": false,
+    "complete_binary_sbom_reviewed": false,
+    "vulnerability_reviewed": false,
+    "release_publisher_identity_approved": false,
+    "reviewer": "",
+    "approval_reference": ""
+  }
+}

@@ -1,0 +1,71 @@
+.....s.....................ssssss....................................... [ 52%]
+.............................................ss.................         [100%]
+================================ tests coverage ================================
+_______________ coverage: platform linux, python 3.13.5-final-0 ________________
+
+Name                                    Stmts   Miss  Cover   Missing
+---------------------------------------------------------------------
+src/idra/__init__.py                        1      0   100%
+src/idra/__main__.py                        2      2     0%   1-2
+src/idra/app/__init__.py                    0      0   100%
+src/idra/app/cli.py                       217     62    71%   102, 106-111, 124, 131-142, 158-160, 162-163, 175, 177, 181-184, 187, 189-195, 202-232, 239
+src/idra/app/controller.py                222     39    82%   59, 82, 84, 105, 107-108, 110-111, 119, 124, 141, 145, 152-156, 174, 179-181, 198-199, 211, 223-227, 233-242
+src/idra/app/settings.py                   13      0   100%
+src/idra/app/state.py                       6      0   100%
+src/idra/browser/__init__.py                0      0   100%
+src/idra/browser/managed.py               159     57    64%   20-25, 32, 35-36, 51, 79-88, 97, 104-105, 129-130, 132, 138-168, 179
+src/idra/capture/__init__.py                0      0   100%
+src/idra/capture/fixtures.py               25      0   100%
+src/idra/capture/pipeline.py              160     21    87%   40-42, 44, 74, 85, 87, 98-99, 143, 151-156, 164, 167-170
+src/idra/capture/sources.py                98     34    65%   25-27, 29-42, 44-47, 50, 52-54, 65, 67, 71, 85, 93, 111-113, 116
+src/idra/datasets/__init__.py               0      0   100%
+src/idra/datasets/export.py               205     25    88%   41, 54, 56, 62, 74, 86, 99, 107, 128, 138, 159, 166, 176, 190, 196, 198, 204, 209, 212, 216, 219, 222-224, 234
+src/idra/datasets/quality.py              222     51    77%   48, 57-62, 64, 66, 68, 70, 74, 76, 87-91, 105, 113, 119, 121, 123, 125, 134, 142, 146-147, 149, 162, 167, 169, 175, 183-184, 186, 188, 190-193, 204, 209, 211, 217, 221, 225-228, 234-235
+src/idra/diagnostics/__init__.py            0      0   100%
+src/idra/diagnostics/benchmark.py          36      3    92%   17, 31, 41
+src/idra/diagnostics/checks.py             95     41    57%   20-36, 53-54, 62-63, 66-67, 70-72, 80-85, 92-93, 95-104
+src/idra/events/__init__.py                 0      0   100%
+src/idra/events/models.py                 238      4    98%   88, 176, 197, 267
+src/idra/inputs/__init__.py                 0      0   100%
+src/idra/inputs/context.py                 80     65    19%   13-56, 60-63, 65, 67-80, 82-85
+src/idra/inputs/recorder.py               106     75    29%   25, 29-36, 38-60, 62-67, 69-73, 75-77, 81-82, 84-92, 94-99, 101, 103-113
+src/idra/logging/__init__.py                0      0   100%
+src/idra/logging/setup.py                  16     16     0%   2-18
+src/idra/media/__init__.py                  0      0   100%
+src/idra/media/ffmpeg.py                  190     37    81%   43, 52-53, 75-77, 82, 84, 90, 95, 101-103, 105, 109, 115-121, 141-142, 149, 157-158, 162, 164, 166, 168-173, 212
+src/idra/media/images.py                   96     11    89%   18, 38, 42, 53, 55, 63, 78, 93, 95, 97, 100
+src/idra/privacy/__init__.py                0      0   100%
+src/idra/privacy/policy.py                 50      2    96%   34-35
+src/idra/segmentation/__init__.py           0      0   100%
+src/idra/segmentation/trajectories.py      78     15    81%   43, 57-61, 66, 68, 77, 81-87, 94
+src/idra/storage/__init__.py                0      0   100%
+src/idra/storage/files.py                 123     18    85%   21, 39, 61-63, 68, 90, 93-94, 96, 111-115, 128-130
+src/idra/storage/journal.py               102      7    93%   27, 32, 47, 49, 70, 107-108
+src/idra/storage/recovery.py               94      8    91%   13, 21, 53, 59, 72-73, 89-90
+src/idra/storage/repository.py            140     15    89%   50, 95-105, 121, 146-147
+src/idra/synchronization/__init__.py        0      0   100%
+src/idra/synchronization/clock.py          25      2    92%   14, 22
+src/idra/ui/__init__.py                     0      0   100%
+src/idra/ui/dashboard.py                   45     45     0%   1-56
+src/idra/ui/dataset.py                    158    158     0%   1-169
+src/idra/ui/library.py                    115    115     0%   1-122
+src/idra/ui/settings_page.py              119    119     0%   1-124
+src/idra/ui/studio.py                     112    112     0%   1-116
+src/idra/ui/timeline.py                   136    136     0%   1-143
+src/idra/ui/widgets.py                     48     48     0%   1-57
+src/idra/ui/window.py                     310    304     2%   8-349
+src/idra/ui/workers.py                     17     17     0%   1-19
+---------------------------------------------------------------------
+TOTAL                                    3859   1664    57%
+Coverage JSON written to file reports/coverage.json
+=========================== short test summary info ============================
+SKIPPED [1] tests/test_browser.py:191: Chromium administrator policy blocks local HTTP; navigation NOT VERIFIED, no policy bypass attempted
+SKIPPED [1] tests/test_gui.py:21: PyQt6/pytest-qt unavailable; GUI execution NOT VERIFIED
+SKIPPED [1] tests/test_gui.py:28: PyQt6/pytest-qt unavailable; GUI execution NOT VERIFIED
+SKIPPED [1] tests/test_gui.py:38: PyQt6/pytest-qt unavailable; GUI execution NOT VERIFIED
+SKIPPED [1] tests/test_gui.py:44: PyQt6/pytest-qt unavailable; GUI execution NOT VERIFIED
+SKIPPED [1] tests/test_gui.py:55: PyQt6/pytest-qt unavailable; GUI execution NOT VERIFIED
+SKIPPED [1] tests/test_gui.py:67: PyQt6/pytest-qt unavailable; GUI execution NOT VERIFIED
+SKIPPED [1] tests/test_native.py:69: MSS package unavailable; native MSS behavior NOT VERIFIED
+SKIPPED [1] tests/test_native.py:82: Pynput package unavailable; native input-hook behavior NOT VERIFIED
+127 passed, 9 skipped in 20.06s

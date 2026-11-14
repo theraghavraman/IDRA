@@ -1,0 +1,80 @@
+{
+  "schema_version": "1.0",
+  "format": "idra-portable-dataset",
+  "application_version": "0.9.0",
+  "media_included": true,
+  "media_review_attested": true,
+  "counts": {
+    "sessions": 1,
+    "events": 9,
+    "frames": 7,
+    "trajectories": 1,
+    "assets": 5
+  },
+  "sessions": [
+    {
+      "session_id": "863228e6-ea35-49ef-8e6a-d1f5c6d73fc7",
+      "label": "SYNTHETIC release fixture",
+      "task_description": "Click the generated rectangle",
+      "created_at": "2026-10-16T10:15:22.938770+00:00",
+      "duration_ns": 1005571914,
+      "synthetic": true,
+      "source_state": "COMPLETED",
+      "geometry": {
+        "left": 0,
+        "top": 0,
+        "width": 640,
+        "height": 360,
+        "monitor": 1,
+        "backend": "synthetic_fixture",
+        "output_width": 480,
+        "output_height": 270
+      },
+      "media": "sessions/863228e6-ea35-49ef-8e6a-d1f5c6d73fc7/media/screen.mkv",
+      "source_manifest_sha256": "2d3214876aa96aa1e169d0d70a98fec27be2007a43887701caca00f7f707c643",
+      "privacy": {
+        "masks": [],
+        "browser_labels": false,
+        "browser_titles": false,
+        "url_detail": "origin"
+      },
+      "quality_status": "passed_with_warnings"
+    }
+  ],
+  "segmentation": {
+    "inactivity_s": 30,
+    "navigation_boundaries": false,
+    "max_actions": 1000,
+    "frame_stride": 1
+  },
+  "splitting": {
+    "unit": "session",
+    "ratios": [
+      0.8,
+      0.1,
+      0.1
+    ],
+    "seed": "idra-v1",
+    "counts": {
+      "train": 1,
+      "validation": 0,
+      "test": 0
+    },
+    "same_session_across_splits_possible": false
+  },
+  "checksums": {
+    "events.jsonl": "4942c9d39445ab2a366acf1f0dea40dfa0a792b567af441957bd917b97bb8604",
+    "frames.jsonl": "46df9dec430f6775721d06e8d2a83a6df104c002f9720adda8912ba20ed82756",
+    "trajectories.jsonl": "99cb69ea9b0020c2e4908a4a5a44970e1c62e0d4caf037ab0c7a6bc8d68cb3d7",
+    "splits.jsonl": "96f049edec48769ffd175b1e21600ee7b38325f7254f437d5bf669d735acdd6a",
+    "assets.jsonl": "fa86a5b7e1d35f0c8bb3d267cc376105c5265551b06bc112b23ddf66f9d6e26b",
+    "events.csv": "13615bfde3d4805b7fe2839e4a29f5755504f44a03e8a2cd3a9736e48d60ff8f",
+    "sessions/863228e6-ea35-49ef-8e6a-d1f5c6d73fc7/quality.json": "631b854dc5707107cd9e3a33679b0b086b39c8acb9b26f6c69241dd7118a5d3d"
+  },
+  "timestamp_semantics": "t_ns is elapsed monotonic session time; pts_ns is nominal CFR playback time; frame index is authoritative",
+  "limitations": [
+    "Media review is a user attestation, not automatic visual-secret detection.",
+    "Schema/quality checks do not establish training suitability.",
+    "Deterministic hashing may leave small datasets with an empty split."
+  ]
+}

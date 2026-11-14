@@ -1,0 +1,38 @@
+{
+  "storage_root": "./local-recordings",
+  "ffmpeg": "ffmpeg",
+  "ffprobe": "ffprobe",
+  "capture": {
+    "backend": "mss",
+    "monitor": 1,
+    "fps": 5,
+    "output_width": 1280,
+    "screenshot_interval_s": 2.0,
+    "queue_frames": 8,
+    "x11_display": null,
+    "region_left": 0,
+    "region_top": 0,
+    "region_width": 1280,
+    "region_height": 720,
+    "capture_mouse": true,
+    "capture_keyboard": false,
+    "capture_window_context": false,
+    "mouse_move_interval_ms": 50
+  },
+  "browser": {
+    "enabled": false,
+    "start_url": "about:blank",
+    "executable": null
+  },
+  "privacy": {
+    "masks": [],
+    "browser_labels": false,
+    "browser_titles": false,
+    "url_detail": "origin"
+  },
+  "min_free_mb": 1024,
+  "event_queue_size": 8192,
+  "batch_size": 128,
+  "flush_interval_s": 0.5,
+  "retention_days": 0
+}
