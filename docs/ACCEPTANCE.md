@@ -1,6 +1,4 @@
-> **Current release gate:** v0.9.3-rc1 is a source-only candidate; see
-> [RELEASE_0.9.3_RC1.md](RELEASE_0.9.3_RC1.md). Older tables below are historical v0.9.2
-> evidence and should not be used as acceptance for the current candidate.
+> Current test results for 0.9.3-rc2 are in the [README Status section](../README.md#status). The tables below are the history from earlier versions.
 
 # Release gates and outstanding issues
 
@@ -29,7 +27,7 @@ The 0.9.0 matrix below is retained unchanged for traceability.
 
 **Release classification: tested source package with important unverified desktop capabilities. Production acceptance is NOT achieved.**
 
-The attached engineering specification requires verification of every critical acceptance gate, not just code presence. This matrix intentionally separates implemented code, controlled evidence and unverified behavior. Passing synthetic/core tests does not certify a deployable macOS application.
+The specification requires every critical acceptance gate to be verified, not just implemented, so this table keeps implemented, tested and untested behaviour separate. Passing synthetic/core tests does not certify a deployable macOS application.
 
 | Acceptance area | Status in this release |
 |---|---|
@@ -48,9 +46,9 @@ The attached engineering specification requires verification of every critical a
 | Missing dependencies, controlled errors and low-disk reserve | Verified in available paths; native macOS permission denial NOT VERIFIED |
 | No automatic recorder uploads | No upload implementation present; limited static review only, not a full network audit |
 | Test accounting and source ZIP integrity | See machine-readable reports and exact-archive clean-extraction report |
-| Fresh installation from network on target OS | NOT VERIFIED: dependency retrieval unavailable here |
+| Fresh installation from network on target OS | NOT VERIFIED at the time; since done on macOS arm64 and in Linux/macOS CI for 0.9.3-rc2 |
 | Multi-hour capture and real storage exhaustion | NOT VERIFIED |
-| Ruff/mypy and complete supply-chain review | NOT RUN / incomplete; not falsely marked clean |
+| Ruff/mypy and complete supply-chain review | NOT RUN at the time; Ruff now passes in CI, mypy findings still open, supply-chain review incomplete |
 | Signed executable distribution | Not supplied |
 
 ## Severity-ranked outstanding work

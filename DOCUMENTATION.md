@@ -1,7 +1,4 @@
-> **2026-11-10 candidate notice:** The sections below describe the historical 0.9.2 product.
-> The latest source-only rc2 candidate remains **NO-GO** for production. Follow
-> `docs/RELEASE_0.9.3_RC2.md` and `docs/PRODUCTION_RELEASE_RUNBOOK.md` instead of assuming
-> historical native package verification applies to the updated code.
+> **Note:** this reference describes 0.9.2. For what has been tested in the current 0.9.3-rc2 source, see the [Status section of the README](README.md#status).
 
 # IDRA 0.9.2 Documentation & Architecture Reference
 

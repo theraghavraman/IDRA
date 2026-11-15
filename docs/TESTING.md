@@ -6,17 +6,17 @@ Unit tests cover schema constraints, aware UTC/elapsed timestamps, privacy norma
 
 Integration tests use a labeled generated screen source through the real controller, FFmpeg encoder, screenshots, JSONL writer and SQLite indexes. They exercise pause/resume, source/permission/dependency/storage error paths, real process death, tail recovery, deterministic trajectories, quality failure fixtures, safe media processing, export and independent re-import.
 
-Chromium DOM integration runs a real browser with synthetic in-memory pages. It exercises click, input, scroll, sensitive form exclusion, optional label policy, binding rejection, pause, timestamp calibration and controller persistence. A separate real local HTTP navigation test remains in the suite; administrator policy caused that test to skip here. The in-memory tests do not claim to verify HTTP navigation or all arbitrary websites.
+Chromium DOM integration runs a real browser with synthetic in-memory pages. It exercises click, input, scroll, sensitive form exclusion, optional label policy, binding rejection, pause, timestamp calibration and controller persistence. A separate real local HTTP navigation test also runs in Linux CI. The in-memory tests do not claim to verify HTTP navigation or all arbitrary websites.
 
 Native capture uses a newly allocated Xvfb display with a synthetic labeled window and real FFmpeg x11grab. MSS and Pynput tests also target that isolated display but are skipped when the packages are absent. No test is permitted to use a real person's desktop as its fixture.
 
-Six GUI tests target actual PyQt6 widgets and workers when PyQt6/pytest-qt are present. They cover screen count/navigation, consent, worker responsiveness/cancellation and fixture recording controls. They were not executed in this build. Headless/offscreen GUI tests, when run later, still do not certify native rendering, permissions or multimedia playback.
+Six GUI tests target actual PyQt6 widgets and workers when PyQt6/pytest-qt are present. They cover screen count/navigation, consent, worker responsiveness/cancellation and fixture recording controls. They run on macOS in CI and locally, and offscreen on Linux CI. Passing them does not prove native rendering, permissions or multimedia playback on every desktop.
 
 ## Commands
 
 `python -m pytest -q` runs available checks and reports missing prerequisites. For authoritative release evidence, use `python -m pytest -q --junitxml=reports/pytest.xml --cov=idra --cov-report=json:reports/coverage.json --cov-report=term-missing` and retain stdout/stderr. Skipped cases are not passed cases. Coverage measures only executed Python paths; unexecuted GUI/native code reduces total coverage and remains a release risk.
 
-`python scripts/static_audit.py` parses/compiles modules and checks a small explicit set of unsafe execution patterns. It does not perform full linting, typing, dependency vulnerability scanning or prove security. Ruff/mypy were missing and were not run; their separate commands are documented without a false passing result.
+`python scripts/static_audit.py` parses/compiles modules and checks a small explicit set of unsafe execution patterns. It does not perform full linting, typing, dependency vulnerability scanning or prove security. Ruff runs in CI and passes; `python -m mypy` still reports open type errors.
 
 ## Performance evidence
 

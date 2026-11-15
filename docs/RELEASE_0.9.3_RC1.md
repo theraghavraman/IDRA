@@ -1,4 +1,4 @@
-# IDRA 0.9.3-rc1 - Release gate / acceptance ledger
+# IDRA 0.9.3-rc1: release notes and acceptance status
 
 **Classification: SOURCE-ONLY RELEASE CANDIDATE, NOT PRODUCTION ACCEPTED.**
 
@@ -17,11 +17,11 @@
 
 | Target | Status |
 |---|---|
-| Linux source automated tests and synthetic demo | Run in audit environment; see generated release verifier report |
+| Linux source automated tests and synthetic demo | Passed; see the release verifier report |
 | Linux bundled binary | Not rebuilt or executed for this candidate |
-| Windows 10/11 x64 native application | Not built/tested in this environment |
-| macOS arm64 native application | Not built/tested in this environment |
-| macOS Intel x86_64 native application | Not built/tested in this environment |
+| Windows 10/11 x64 native application | Not built or tested for rc1 |
+| macOS arm64 native application | Not built or tested for rc1 |
+| macOS Intel x86_64 native application | Not built or tested for rc1 |
 | Linux Wayland desktop screen capture | Unsupported by current architecture |
 
 ## Product safeguards and limitations

@@ -7,12 +7,28 @@ keyboard-category, window-context and managed-browser metadata), encodes H.264 m
 validated computer-use trajectories. Everything stays on your machine; IDRA has no network upload
 or telemetry service.
 
-> [!WARNING]
-> **Release status: NO-GO for production.** 0.9.3-rc2 is a source-only candidate for internal
-> engineering and native-platform acceptance work. There are no signed/notarized installers yet,
-> and Windows, macOS and physical Linux hardware acceptance is still pending. See the
-> [rc2 acceptance ledger](docs/RELEASE_0.9.3_RC2.md) and the
-> [production release runbook](docs/PRODUCTION_RELEASE_RUNBOOK.md).
+[![Tests](https://github.com/theraghavraman/IDRA/actions/workflows/tests.yml/badge.svg)](https://github.com/theraghavraman/IDRA/actions/workflows/tests.yml)
+
+## Status
+
+0.9.3-rc2 is a source release; there are no signed installers yet.
+
+**Tested**
+
+- **CI on every push** ([Tests workflow](https://github.com/theraghavraman/IDRA/actions/workflows/tests.yml)):
+  - Linux on Python 3.11 and 3.13: 172 passed, 1 skipped. This includes real FFmpeg X11 capture, MSS, Pynput and Chromium tests on an isolated Xvfb display, plus the Linux installer rollback.
+  - macOS arm64 on Python 3.13: 167 passed, 6 skipped (the Linux-only tests).
+  - Ruff runs in CI and passes.
+- **On an M2 Mac** (macOS 27, Python 3.13): the full suite, including the PyQt6 GUI tests, and the synthetic demo (record, H.264 encode, export, `verify-export`), which passed every check.
+
+**Not yet tested**
+
+- A real screen-recording session on a physical Mac or Windows PC with OS permissions granted.
+- Multi-hour recordings.
+- Signed and notarized builds.
+- Windows.
+
+mypy still reports type errors (mostly Optional narrowing and Qt stubs) that are not yet fixed.
 
 ## What's in 0.9.3-rc2
 
