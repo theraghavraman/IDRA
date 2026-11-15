@@ -4,6 +4,7 @@ Everything here is defensive: a helper that cannot do its job reports that fact 
 returns, it never raises into application start-up.
 """
 from __future__ import annotations
+
 import contextlib
 import ctypes
 import faulthandler

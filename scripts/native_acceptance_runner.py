@@ -9,17 +9,18 @@ Examples:
   python scripts/native_acceptance_runner.py --source-root C:/idra/intelligent_data_recording_agent --out C:/idra-acceptance --pytest
 """
 from __future__ import annotations
+
 import argparse
 import hashlib
 import importlib.metadata
 import json
 import os
 import platform
-from pathlib import Path
 import shutil
 import subprocess
 import sys
 from datetime import datetime, timezone
+from pathlib import Path
 from zipfile import ZipFile
 
 

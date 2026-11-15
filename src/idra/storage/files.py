@@ -1,5 +1,6 @@
 """Restrictive files, atomic replacement, safe relative paths, streaming JSONL."""
 from __future__ import annotations
+
 import hashlib
 import json
 import os

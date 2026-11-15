@@ -3,13 +3,16 @@ import subprocess
 import sys
 import time
 from pathlib import Path
+
 import pytest
+
 from idra.app.controller import SessionController
 from idra.capture.fixtures import SyntheticSource
 from idra.events.models import Payload, State
 from idra.storage.files import iter_jsonl
 from idra.storage.recovery import recover
 from idra.storage.repository import Repository
+
 
 def test_recording_requires_explicit_consent(settings):
     c = SessionController(settings)

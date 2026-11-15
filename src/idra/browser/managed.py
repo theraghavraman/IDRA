@@ -1,11 +1,14 @@
 """Instrumentation applies only to this app's explicitly launched browser context."""
 from __future__ import annotations
+
 import json
 import threading
 import time
 from collections import OrderedDict
 from pathlib import Path
+
 from idra.events.models import Payload
+
 
 class Instrumentation:
     def __init__(self, context, emit, clock, privacy, is_active=lambda: True):

@@ -2,12 +2,22 @@ import json
 import os
 from datetime import datetime, timedelta, timezone
 from uuid import uuid4
+
 import pytest
+
 from idra.events.models import Event, Payload, State
-from idra.storage.files import SessionBusy, SessionLock, StorageError, atomic_json, contained, iter_jsonl
+from idra.storage.files import (
+    SessionBusy,
+    SessionLock,
+    StorageError,
+    atomic_json,
+    contained,
+    iter_jsonl,
+)
 from idra.storage.journal import Journal
 from idra.storage.recovery import recover
 from idra.storage.repository import connect_index, query_events
+
 
 def event(sid=None, sequence=0):
     return Event(session_id=sid or uuid4(), sequence=sequence, t_ns=sequence,

@@ -1,5 +1,6 @@
 """Six operational screens; all long-running services run in worker threads."""
 from __future__ import annotations
+
 import logging
 import platform
 import sys
@@ -8,6 +9,7 @@ import traceback
 from datetime import datetime
 from pathlib import Path
 from uuid import uuid4
+
 from PyQt6.QtCore import QObject, Qt, QThread, QTimer, QUrl, pyqtSignal
 from PyQt6.QtGui import QAction, QDesktopServices, QIcon, QKeySequence, QShortcut
 from PyQt6.QtWidgets import (
@@ -31,6 +33,7 @@ from PyQt6.QtWidgets import (
     QVBoxLayout,
     QWidget,
 )
+
 from idra.app.controller import SessionController
 from idra.app.settings import save_settings
 from idra.events.models import Settings

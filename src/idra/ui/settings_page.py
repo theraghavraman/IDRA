@@ -1,5 +1,6 @@
 import json
 import platform
+
 from PyQt6.QtCore import QUrl
 from PyQt6.QtGui import QDesktopServices
 from PyQt6.QtWidgets import (
@@ -14,6 +15,7 @@ from PyQt6.QtWidgets import (
     QVBoxLayout,
     QWidget,
 )
+
 from idra.events.models import PrivacyConfig
 from idra.ui.widgets import button, card, mono_editor, pretty, section_title, spin, title
 
@@ -310,6 +312,7 @@ class SettingsPage(QWidget):
         )
         if path:
             from pathlib import Path
+
             from idra.storage.files import atomic_json
 
             report = self.last_diagnostics

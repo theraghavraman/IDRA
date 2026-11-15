@@ -1,12 +1,16 @@
 from __future__ import annotations
+
 import hashlib
 import os
 import threading
 from pathlib import Path
 from uuid import uuid4
+
 import cv2
+
 from idra.media.ffmpeg import Cancelled, MediaError
 from idra.storage.files import atomic_json, private_dir, private_open
+
 
 def blur_score(image) -> float:
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)

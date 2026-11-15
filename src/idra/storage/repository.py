@@ -1,12 +1,15 @@
 from __future__ import annotations
+
 import os
 import shutil
 import sqlite3
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from uuid import UUID, uuid4
+
 from idra.events.models import Event, Frame, Manifest, State
 from idra.storage.files import SessionLock, StorageError, atomic_json, contained, private_dir
+
 
 class ClosingConnection(sqlite3.Connection):
     def __exit__(self, *args):

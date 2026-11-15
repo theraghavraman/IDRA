@@ -1,8 +1,6 @@
 """Real FFmpeg regression tests: recovery may discard unjournaled tail, never invent frames."""
 from __future__ import annotations
 
-from pathlib import Path
-
 import pytest
 
 from idra.datasets.quality import validate_session

@@ -2,6 +2,7 @@
 import cv2
 import numpy as np
 
+
 class SyntheticSource:
     synthetic = True
     timestamp_kind = "synthetic"

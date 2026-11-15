@@ -10,6 +10,7 @@ from PyQt6.QtWidgets import (
     QVBoxLayout,
     QWidget,
 )
+
 from idra.events.models import State
 from idra.storage.files import contained
 from idra.ui.widgets import (

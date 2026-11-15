@@ -1,13 +1,16 @@
 """One bounded writer. Journals are fsynced before committing rebuildable indexes."""
 from __future__ import annotations
+
 import queue
 import threading
 import time
 from collections import Counter
 from pathlib import Path
+
 from idra.events.models import Event, Frame
 from idra.storage.files import StorageError, private_open
 from idra.storage.repository import connect_index
+
 
 class Journal:
     def __init__(self, directory: Path, queue_size=8192, batch_size=128, flush_interval=0.5):

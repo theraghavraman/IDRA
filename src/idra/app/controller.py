@@ -1,11 +1,13 @@
 """Transactional recording lifecycle, with injectable capture/input/browser providers."""
 from __future__ import annotations
+
 import logging
 import platform
 import shutil
 import threading
 from datetime import datetime, timezone
 from uuid import uuid4
+
 from idra.app.state import transition
 from idra.browser.managed import ManagedBrowser
 from idra.capture.pipeline import CapturePipeline
@@ -110,7 +112,7 @@ class SessionController:
                                                  self.request_stop, self._failure)
                 try:
                     self.inputs.start()
-                except (RuntimeError, ImportError) as exc:
+                except (RuntimeError, ImportError):
                     # If all telemetry channels are disabled, hotkey failure must not
                     # prevent screen-only recording; clearly mark the limitation.
                     if self.settings.capture.capture_mouse or self.settings.capture.capture_keyboard:

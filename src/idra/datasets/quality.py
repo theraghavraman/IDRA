@@ -1,5 +1,6 @@
 """Streaming quality checks with disk-backed duplicate detection and bounded reports."""
 from __future__ import annotations
+
 import html
 import sqlite3
 import subprocess
@@ -7,11 +8,13 @@ import tempfile
 from collections import Counter
 from datetime import datetime, timezone
 from pathlib import Path
+
 from idra.events.models import Event, Frame, QualityThresholds, State
 from idra.media.ffmpeg import inspect_video
 from idra.privacy.policy import sanitize_payload
-from idra.storage.repository import connect_index
 from idra.storage.files import SessionLock, atomic_json, contained, iter_jsonl, private_open, sha256
+from idra.storage.repository import connect_index
+
 
 class QualityReport:
     def __init__(self, session_id):

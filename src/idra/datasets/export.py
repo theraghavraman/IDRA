@@ -1,5 +1,6 @@
 """Portable, atomic datasets, explicit media review, stable leakage-aware split assignment."""
 from __future__ import annotations
+
 import csv
 import hashlib
 import json
@@ -10,13 +11,23 @@ import tempfile
 from contextlib import ExitStack
 from pathlib import Path
 from uuid import UUID, uuid4
+
 from idra.datasets.quality import validate_session
 from idra.events.models import Event, Frame, SegmentationConfig, State, Trajectory
 from idra.media.ffmpeg import Cancelled
 from idra.privacy.policy import safe_csv, sanitize_payload
 from idra.segmentation.trajectories import trajectories
-from idra.storage.files import SessionLock, atomic_json, contained, iter_jsonl, private_dir, private_open, sha256
+from idra.storage.files import (
+    SessionLock,
+    atomic_json,
+    contained,
+    iter_jsonl,
+    private_dir,
+    private_open,
+    sha256,
+)
 from idra.storage.repository import iter_events, iter_frames
+
 
 class ExportFrame(Frame):
     media_available: bool = False

@@ -1,5 +1,6 @@
 """Two bounded workers: capture/mask and encode/journal. No GUI-thread I/O."""
 from __future__ import annotations
+
 import hashlib
 import os
 import queue
@@ -8,12 +9,15 @@ import threading
 import time
 from collections import Counter
 from pathlib import Path
+
 import cv2
 import numpy as np
+
 from idra.events.models import Frame, Settings
 from idra.media.ffmpeg import MediaError, VideoEncoder
 from idra.media.images import blur_score, save_png
 from idra.privacy.policy import apply_masks
+
 
 class CapturePipeline:
     def __init__(self, session_id, directory: Path, clock, settings: Settings, journal,

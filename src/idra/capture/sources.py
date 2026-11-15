@@ -1,13 +1,17 @@
 """Capture providers. FFmpeg/X11 is an explicit, receive-timestamped fallback."""
 from __future__ import annotations
+
 import os
 import platform
 import re
 import subprocess
 from typing import Protocol
+
 import numpy as np
+
 from idra.events.models import CaptureConfig
 from idra.media.ffmpeg import MediaError, executable
+
 
 class ScreenSource(Protocol):
     timestamp_kind: str

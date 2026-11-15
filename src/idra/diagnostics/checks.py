@@ -1,5 +1,6 @@
 """No green status without a completed check. No automatic permission bypass."""
 from __future__ import annotations
+
 import ctypes
 import importlib
 import importlib.metadata
@@ -10,8 +11,9 @@ import subprocess
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
-from idra.events.models import Settings
+
 from idra.app.runtime import find_executable, no_window
+from idra.events.models import Settings
 
 PINS = {"pydantic":"2.13.5", "numpy":"2.3.5", "opencv-python-headless":"4.13.0.92",
         "PyQt6":"6.10.0", "PyQt6-Qt6":"6.10.0", "playwright":"1.57.0", "pynput":"1.8.1", "mss":"10.1.0"}
