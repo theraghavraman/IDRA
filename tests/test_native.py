@@ -17,6 +17,25 @@ from idra.storage.files import iter_jsonl
 pytestmark = pytest.mark.native
 
 
+def _wait_for_window(display, name, timeout=5.0):
+    """Wait until the fixture window is mapped, so capture never starts on a blank screen."""
+    if not shutil.which("xwininfo"):
+        time.sleep(0.5)
+        return
+    deadline = time.monotonic() + timeout
+    while time.monotonic() < deadline:
+        tree = subprocess.run(
+            ["xwininfo", "-display", display, "-root", "-tree"],
+            capture_output=True,
+            text=True,
+        ).stdout
+        if f'"{name}"' in tree:
+            time.sleep(0.1)  # let the first expose/draw complete
+            return
+        time.sleep(0.05)
+    pytest.fail(f"Fixture window {name!r} did not appear on {display}")
+
+
 @pytest.fixture
 def isolated_x11(monkeypatch):
     if platform.system() != "Linux" or not shutil.which("Xvfb") or not shutil.which("xmessage"):
@@ -55,7 +74,7 @@ def isolated_x11(monkeypatch):
             stdout=subprocess.DEVNULL,
             stderr=subprocess.DEVNULL,
         )
-        time.sleep(0.15)
+        _wait_for_window(display, "xmessage")
         monkeypatch.setenv("XDG_SESSION_TYPE", "x11")
         yield display
     finally:
