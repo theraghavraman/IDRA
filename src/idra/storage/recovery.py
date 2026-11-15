@@ -59,7 +59,7 @@ def _reconcile_trailing_video(directory: Path, candidate: Path, expected_frames:
         return candidate
     # The decoder can prove the first N frames exist, but we must NOT invent metadata
     # for the surplus encoded tail after the final durable frame-journal write.
-    fd, tmp_name = None, directory / "media" / f".reconciled-{uuid4().hex}.mkv"
+    tmp_name = directory / "media" / f".reconciled-{uuid4().hex}.mkv"
     try:
         command = [executable(ffmpeg), "-hide_banner", "-loglevel", "error", "-nostdin", "-y",
                    "-protocol_whitelist", "file,pipe", "-i", str(candidate.resolve()),

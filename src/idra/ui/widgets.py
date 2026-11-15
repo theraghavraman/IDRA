@@ -1,5 +1,7 @@
 from __future__ import annotations
+
 import json
+
 from PyQt6.QtCore import Qt
 from PyQt6.QtGui import QColor, QFont, QImage, QPixmap
 from PyQt6.QtWidgets import (

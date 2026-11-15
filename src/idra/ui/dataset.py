@@ -1,6 +1,7 @@
 import itertools
 from pathlib import Path
 from uuid import uuid4
+
 from PyQt6.QtWidgets import (
     QCheckBox,
     QComboBox,
@@ -14,6 +15,7 @@ from PyQt6.QtWidgets import (
     QVBoxLayout,
     QWidget,
 )
+
 from idra.events.models import SegmentationConfig
 from idra.storage.files import SessionLock, contained
 from idra.ui.widgets import button, card, mono_editor, pretty, section_title, spin, title

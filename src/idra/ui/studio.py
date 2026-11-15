@@ -9,6 +9,7 @@ from PyQt6.QtWidgets import (
     QVBoxLayout,
     QWidget,
 )
+
 from idra.ui.widgets import button, card, section_title, spin, title
 
 

@@ -1,13 +1,16 @@
 from datetime import datetime, timezone
 from uuid import uuid4
+
 import numpy as np
 import pytest
 from pydantic import ValidationError
+
 from idra.app.state import transition
 from idra.events.models import CaptureConfig, Consent, Event, Mask, Payload, PrivacyConfig, State
 from idra.inputs.recorder import key_metadata
 from idra.privacy.policy import apply_masks, redact_text, safe_csv, sanitize_payload, sanitize_url
 from idra.synchronization.clock import SessionClock
+
 
 def test_clock_keeps_monotonic_and_utc_origins():
     ticks = iter([10_000, 20_000, 40_000])

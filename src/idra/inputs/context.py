@@ -1,5 +1,6 @@
 """Optional frontmost-application metadata. Window titles are never collected."""
 from __future__ import annotations
+
 import os
 import platform
 import re
@@ -7,7 +8,9 @@ import shutil
 import subprocess
 import threading
 from pathlib import Path
+
 from idra.events.models import Payload
+
 
 def active_application() -> tuple[str, int] | None:
     system = platform.system()

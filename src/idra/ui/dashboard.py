@@ -1,4 +1,5 @@
 from PyQt6.QtWidgets import QFrame, QGridLayout, QHBoxLayout, QLabel, QVBoxLayout, QWidget
+
 from idra.ui.widgets import card, fill_table, format_time, section_title, table, title
 
 METRIC_DEFINITIONS = [

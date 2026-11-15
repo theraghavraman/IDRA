@@ -1,8 +1,11 @@
 """Visible, consent-gated input telemetry. Printable key identities never leave callbacks."""
 from __future__ import annotations
+
 import platform
 import threading
+
 from idra.events.models import Payload
+
 
 def _keyboard_permission_missing() -> bool:
     if platform.system() != "Darwin":

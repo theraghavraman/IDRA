@@ -8,6 +8,7 @@ from PyQt6.QtWidgets import (
     QVBoxLayout,
     QWidget,
 )
+
 from idra.storage.files import contained
 from idra.storage.repository import connect_index, neighboring_frames, query_events
 from idra.ui.widgets import (

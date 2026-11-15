@@ -1,8 +1,10 @@
 """No arbitrary typed text; URL minimization and pre-storage pixel masks."""
 from __future__ import annotations
+
 import math
 import re
 from urllib.parse import urlsplit, urlunsplit
+
 from idra.events.models import Payload, PrivacyConfig
 
 _SECRET_PATTERNS = [

@@ -1,8 +1,10 @@
 """A single monotonic timebase; pauses never rewrite historical timestamps."""
 from __future__ import annotations
+
 from datetime import datetime, timedelta, timezone
 from time import perf_counter_ns
 from typing import Callable
+
 
 class SessionClock:
     def __init__(self, monotonic: Callable[[], int] = perf_counter_ns,

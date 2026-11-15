@@ -1,5 +1,6 @@
 """Real FFmpeg operations with bounded I/O, cancellation and output verification."""
 from __future__ import annotations
+
 import json
 import os
 import queue
@@ -9,8 +10,10 @@ import time
 from pathlib import Path
 from typing import Callable
 from uuid import uuid4
-from idra.storage.files import private_dir, sha256
+
 from idra.app.runtime import no_window
+from idra.storage.files import private_dir, sha256
+
 
 class MediaError(RuntimeError):
     pass

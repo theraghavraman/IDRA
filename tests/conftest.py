@@ -1,10 +1,13 @@
 import shutil
 import time
+
 import pytest
+
 from idra.app.controller import SessionController
 from idra.capture.fixtures import SyntheticSource
 from idra.events.models import Payload, Settings
 from idra.storage.repository import Repository
+
 
 @pytest.fixture(scope="session")
 def recording_template(tmp_path_factory):

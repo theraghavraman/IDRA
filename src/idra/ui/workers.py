@@ -1,5 +1,7 @@
 import threading
+
 from PyQt6.QtCore import QObject, pyqtSignal, pyqtSlot
+
 
 class Worker(QObject):
     result = pyqtSignal(object)

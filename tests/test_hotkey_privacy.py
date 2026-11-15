@@ -1,6 +1,7 @@
 """Privacy-preserving global stop works independently of category telemetry."""
 from types import SimpleNamespace
 from unittest.mock import Mock
+
 from idra.events.models import CaptureConfig
 from idra.inputs.recorder import InputRecorder
 

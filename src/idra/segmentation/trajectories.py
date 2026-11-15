@@ -1,7 +1,9 @@
 """Deterministic bounded trajectories; no inferred task success or action descriptions."""
 from __future__ import annotations
+
 import hashlib
 from uuid import uuid5
+
 from idra.events.models import Action, SegmentationConfig, State, Trajectory
 from idra.storage.repository import connect_index, iter_events, neighboring_frames
 

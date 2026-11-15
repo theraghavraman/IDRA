@@ -11,6 +11,7 @@ automated tests -> PyInstaller -> signature check (macOS) -> smoke test of the f
 installer package in dist/. Uses only the Python standard library.
 """
 from __future__ import annotations
+
 import argparse
 import glob
 import json

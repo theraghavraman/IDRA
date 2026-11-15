@@ -1,5 +1,7 @@
 import pytest
+
 from idra.diagnostics.benchmark import measure_ingestion
+
 
 @pytest.mark.performance
 def test_sustained_bounded_ingestion_persists_all_events():

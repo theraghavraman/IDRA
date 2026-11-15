@@ -1,7 +1,9 @@
 import logging
 from datetime import datetime
 from pathlib import Path
+
 from pydantic import ValidationError
+
 from idra.events.models import Settings
 from idra.privacy.policy import sanitize_url
 from idra.storage.files import atomic_json

@@ -2,7 +2,9 @@
 import logging
 from logging.handlers import RotatingFileHandler
 from pathlib import Path
+
 from idra.storage.files import private_dir
+
 
 def configure(root: Path):
     private_dir(root)

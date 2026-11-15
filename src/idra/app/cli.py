@@ -1,15 +1,18 @@
 """CLI entry points are independently usable without importing Qt."""
 from __future__ import annotations
+
 import argparse
 import json
 import sys
 import time
 from pathlib import Path
 from uuid import uuid4
+
 from idra.app.settings import load_settings, load_settings_safe
 from idra.events.models import Payload, QualityThresholds, SegmentationConfig
 from idra.storage.files import SessionLock, atomic_json, contained
 from idra.storage.repository import Repository
+
 
 def parser():
     p = argparse.ArgumentParser(prog="idra", description="Local-first, consent-based recording and dataset preparation")
